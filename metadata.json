@@ -1,0 +1,6 @@
+{
+  "name": "Polsia",
+  "description": "An autonomous AI-native company-building platform from San Francisco that plans, codes, markets, and operates businesses end-to-end.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

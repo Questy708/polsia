@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  font-family: "Geist", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  background-color: #000000;
+  color: #ededed;
+}
+
+/* Custom glowing and utility styles */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+    filter: blur(40px);
+  }
+  50% {
+    opacity: 0.35;
+    filter: blur(60px);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+/* Thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Theme variables using data-theme attribute */
+body[data-theme='slate'] {
+  background-color: #0f172a !important;
+}
+
+body[data-theme='slate'] .bg-\[\#000000\] {
+  background-color: #0f172a !important;
+}
+body[data-theme='slate'] .bg-\[\#000000\]\/80 {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+}
+body[data-theme='slate'] .bg-black {
+  background-color: #0f172a !important;
+}
+
+/* Card background overrides */
+body[data-theme='black'] .bg-\[\#050506\],
+body[data-theme='black'] .bg-\[\#121214\],
+body[data-theme='black'] .bg-\[\#0D0D0F\] {
+  background-color: #0A0A0C !important;
+}
+
+body[data-theme='slate'] .bg-\[\#050506\],
+body[data-theme='slate'] .bg-\[\#121214\],
+body[data-theme='slate'] .bg-\[\#0D0D0F\] {
+  background-color: #1e293b !important; /* Tailwind slate-800 */
+}
+
+/* Ensure consistent borders and hover styles */
+body[data-theme='black'] .border-\[\#1F2021\] {
+  border-color: #1A1B1D !important;
+}
+
+body[data-theme='slate'] .border-\[\#1F2021\] {
+  border-color: #334155 !important; /* Tailwind slate-700 */
+}
+
+body[data-theme='black'] .hover\:border-zinc-800:hover {
+  border-color: #2E2F32 !important;
+}
+
+body[data-theme='slate'] .hover\:border-zinc-800:hover {
+  border-color: #475569 !important; /* Tailwind slate-600 */
+}
+
+/* Force standard text utility classes to align perfectly with Geist 14px size and 24px line height requirements */
+.text-xs,
+.text-sm {
+  font-size: 14px !important;
+  line-height: 24px !important;
+}
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
